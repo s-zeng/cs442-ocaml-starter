@@ -1,5 +1,4 @@
 (library
  (name cs442)
- (libraries core)
- (preprocess (pps ppx_jane)))
+ (libraries core))
  
