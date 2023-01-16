@@ -1,0 +1,6 @@
+(library
+ (name cs442_test)
+ (libraries core cs442)
+ (inline_tests)
+ (preprocess (pps ppx_jane)))
+ 
