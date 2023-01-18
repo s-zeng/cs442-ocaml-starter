@@ -8,5 +8,5 @@ let two_sum ~nums ~target =
     in
     Int.Map.set previously_seen ~key:value ~data:i, summing_pair
   in
-  List.fold_mapi nums ~init:Int.Map.empty ~f |> Tuple.T2.get2 |> List.filter_opt
+  List.folding_mapi nums ~init:Int.Map.empty ~f |> List.filter_opt
 ;;
