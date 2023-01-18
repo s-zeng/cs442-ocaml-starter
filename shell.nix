@@ -1,21 +1,24 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/refs/tags/22.11.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/refs/tags/22.11.tar.gz") { } }:
 
+let
+  ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_08;
+in
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs; [ 
+  nativeBuildInputs = with ocamlPackages; [
     ocaml
-    dune_3 
+    dune_2
   ];
 
-  buildInputs = with pkgs; [
+  buildInputs = [
     ocamlPackages.core
     ocamlPackages.findlib # required for dune to find core -- don't import this in your own code
   ];
 
   # dev environment stuff
-  packages = with pkgs; [
+  packages = [
     ocamlPackages.ocaml-lsp # language server
     ocamlPackages.utop # repl
-    ocamlformat
+    pkgs.ocamlformat
   ];
 }
 
