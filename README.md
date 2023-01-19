@@ -27,3 +27,7 @@ install `core`. Then run `dune test` to run the tests.
 With the structure of this repo, you can still submit files according to the 
 requirements. Just symlink them to the folder you're submitting from, and as 
 long as you didn't import anything other then core, you should be good to go.
+
+The course builds ocaml files without dune. If you have a file `src/xyz.ml`, you 
+can run `./try_build.sh xyz` to see if it will build using the compilation 
+instructions the course uses.
