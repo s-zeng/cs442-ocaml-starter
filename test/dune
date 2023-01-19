@@ -1,6 +1,6 @@
 (library
  (name cs442_test)
  (libraries core cs442)
- (inline_tests)
+ (inline_tests (flags (-verbose)))
  (preprocess (pps ppx_jane)))
  
