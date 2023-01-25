@@ -1,8 +1,7 @@
 { pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/refs/tags/22.11.tar.gz") { } }:
 
 let
-  # oldest version that lets ocaml-lsp work with tests
-  ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_11;
+  ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_08;
 in
 pkgs.mkShell {
   nativeBuildInputs = with ocamlPackages; [
