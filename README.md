@@ -13,7 +13,7 @@ that code. Remember that all exports from `src/` must be mentioned in
 
 # Building
 
-## Using Nix
+## Using [Nix](https://github.com/NixOS/nix)
 
 Run `nix-shell`, then run `dune test` to run the tests.
 
