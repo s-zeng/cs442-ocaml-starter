@@ -6,7 +6,7 @@ let two_sum ~nums ~target =
       Map.find previously_seen (target - value)
       |> Option.map ~f:(Tuple.T2.create i)
     in
-    Int.Map.set previously_seen ~key:value ~data:i, summing_pair
+    Map.set previously_seen ~key:value ~data:i, summing_pair
   in
   List.folding_mapi nums ~init:Int.Map.empty ~f |> List.filter_opt
 ;;
